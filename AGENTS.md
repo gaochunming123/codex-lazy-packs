@@ -12,6 +12,10 @@ GitHub repo：gaochunming123/codex-lazy-packs
 
 Obsidian vault：G:\我的云端硬盘\2ndbrain
 專案駕駛艙：codex-lazy-packs/專案工作流程.md
+第二大腦結構：
+- 每日筆記：`每日筆記/<日期>.md`
+- 創作庫：`創作庫/`
+- 知識庫：`知識庫/`
 
 ## 工作桌 + 三個家
 
@@ -47,6 +51,8 @@ opencloud_0525/
 ├── .gitignore             # Git 忽略規則
 ├── 04.5-連接-Firebase-資料庫.md  # 懶人包：Firebase 連接
 ├── 07-初始化班級工具工作模式.md    # 懶人包：專案初始化
+├── 阿卡西紀錄ChatGPT指令互動簡報.html  # 互動式 HTML 簡報
+├── 阿卡西紀錄ChatGPT指令...pdf  # 簡報來源 PDF
 ├── skills_claude/         # Claude 版 SOIL 簡報技能
 │   ├── README.md
 │   ├── soil-html-deck/
@@ -57,14 +63,6 @@ opencloud_0525/
     ├── soil-image-deck/
     └── soil-teaching-deck/
 ```
-
-## 主要檔案
-
-入口檔：
-- 04.5-連接-Firebase-資料庫.md
-- 07-初始化班級工具工作模式.md
-設定檔：.gitignore
-部署位置：GitHub Pages（公開 repo）
 
 ## 不要做
 
