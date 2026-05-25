@@ -25,5 +25,5 @@ Codex 懶人包與教學指南。
 
 ## 相關連結
 
-- GitHub Pages：https://mathruffian-dot.github.io/codex-lazy-packs
+- GitHub Pages：https://gaochunming123.github.io/codex-lazy-packs
 - Obsidian 駕駛艙：`codex-lazy-packs/專案工作流程.md`

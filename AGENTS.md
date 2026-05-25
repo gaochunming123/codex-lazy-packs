@@ -5,7 +5,7 @@
 專案名稱：codex-lazy-packs
 專案用途：Codex 懶人包與教學指南
 主要工作目錄：G:\我的云端硬盘\opencloud_0525
-GitHub repo：mathruffian-dot/codex-lazy-packs（待建立）
+GitHub repo：gaochunming123/codex-lazy-packs
 預設 branch：main
 
 ## Obsidian 對應筆記
@@ -16,7 +16,7 @@ Obsidian vault：G:\我的云端硬盘\2ndbrain
 ## 工作桌 + 三個家
 
 - 工作桌：G:\我的云端硬盘\opencloud_0525
-- GitHub：mathruffian-dot/codex-lazy-packs
+- GitHub：gaochunming123/codex-lazy-packs
 - Obsidian：G:\我的云端硬盘\2ndbrain + codex-lazy-packs/專案工作流程.md
 - Firebase：暫未使用
 
