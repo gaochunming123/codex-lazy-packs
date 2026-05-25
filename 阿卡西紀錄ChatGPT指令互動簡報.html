@@ -26,6 +26,8 @@ button,th{font-family:inherit}
 .slide-inner{width:100%;max-width:1320px;position:relative;z-index:2}
 .full-img{position:absolute;inset:0;z-index:0}
 .full-img:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,14,39,.92),rgba(10,14,39,.55) 50%,rgba(10,14,39,.3))}
+.vis-img{position:absolute;inset:0;z-index:0;overflow:hidden}
+.vis-img svg{width:100%;height:100%}
 .kicker{display:inline-block;color:var(--accent);font:700 var(--t4) "JetBrains Mono",monospace;letter-spacing:.2em;margin-bottom:var(--s4);padding:6px 12px;border:1px solid rgba(179,136,255,.6);border-radius:4px;background:rgba(10,14,39,.45)}
 h1{font-size:var(--t1);line-height:1.1;margin:0;font-weight:900;letter-spacing:0}
 h2{font-size:var(--t2);line-height:1.25;margin:0;font-weight:800}
@@ -34,15 +36,16 @@ h2{font-size:var(--t2);line-height:1.25;margin:0;font-weight:800}
 .big-question{text-align:center}.big-question h1{font-size:70px}.big-question .lead{margin-left:auto;margin-right:auto}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);align-items:center}.split.flip .text{order:1}.split.flip .split-img{order:2}
 .split-img{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(179,136,255,.18),0 0 0 1px rgba(255,255,255,.08)}
-.split-img .grad-bg{width:100%;height:100%}.img-tag{position:absolute;top:16px;left:16px;background:rgba(10,14,39,.82);color:var(--accent);padding:6px 12px;border-radius:6px;font:700 11px "JetBrains Mono",monospace;letter-spacing:.1em}
+.split-img svg{width:100%;height:100%;display:block}
+.img-tag{position:absolute;top:16px;left:16px;background:rgba(10,14,39,.82);color:var(--accent);padding:6px 12px;border-radius:6px;font:700 11px "JetBrains Mono",monospace;letter-spacing:.1em;z-index:1}
 .list{list-style:none;margin:var(--s3) 0 0;padding:0}.list li{font-size:20px;color:var(--ink);line-height:1.45;padding:12px 0;border-top:1px solid rgba(184,197,224,.25)}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s2)}
 .type-card,.choice-card,.soil-step{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:22px;backdrop-filter:blur(10px)}
 .type-card{cursor:pointer;transition:transform .25s ease,border-color .25s ease,background .25s ease}.type-card:hover{transform:translateY(-6px);border-color:var(--accent);background:rgba(179,136,255,.07)}
-.card-img{aspect-ratio:16/10;border-radius:8px;overflow:hidden;margin-bottom:18px;background:var(--bg-2)}.card-img .grad-bg{width:100%;height:100%}
+.card-img{aspect-ratio:16/10;border-radius:8px;overflow:hidden;margin-bottom:18px;background:var(--bg-2)}.card-img svg{width:100%;height:100%;display:block}
 .badge{display:inline-block;font:800 var(--t4) "JetBrains Mono",monospace;color:#0a0e27;background:var(--accent);padding:4px 10px;border-radius:4px;margin-bottom:12px}.type-card:nth-child(2) .badge{background:var(--accent-2)}.type-card:nth-child(3) .badge{background:var(--gold)}
 .type-card h3,.choice-card h3,.soil-step h3{font-size:24px;margin:0 0 10px}.type-card p,.choice-card p,.soil-step p{font-size:16px;line-height:1.6;color:var(--ink-2);margin:0}
-.compare-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s2);align-items:center}.support-img{border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(255,110,199,.14)}.support-img .grad-bg{width:100%;height:100%}
+.compare-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s2);align-items:center}.support-img{border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(255,110,199,.14)}.support-img svg{width:100%;height:100%;display:block}
 table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size:18px}table.compare th,table.compare td{padding:15px 16px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}table.compare th{color:var(--accent);font:800 13px "JetBrains Mono",monospace;letter-spacing:.1em;cursor:pointer;user-select:none}table.compare th:hover{color:var(--accent-2)}table.compare tr:hover td{background:rgba(179,136,255,.045)}.yes{color:var(--good);font-weight:900}.no{color:var(--ink-4)}.mid{color:var(--gold);font-weight:900}
 .chart-wrap{height:440px;margin-top:var(--s3);padding:20px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08)}
 .tree-wrap{position:relative;margin-top:var(--s2);height:420px}.tree-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.question-node{position:absolute;left:50%;top:0;transform:translateX(-50%);width:360px;text-align:center;border:1px solid rgba(179,136,255,.7);border-radius:10px;padding:20px;background:rgba(10,14,39,.82);box-shadow:0 0 36px rgba(179,136,255,.15)}.choice-card{position:absolute;top:230px;width:31%;cursor:pointer;transition:.25s}.choice-card:hover{border-color:var(--accent);transform:translateY(-5px)}.choice-card.a{left:0}.choice-card.b{left:34.5%}.choice-card.c{right:0}.tree-result{margin-top:14px;color:var(--ink-2);font-size:18px}
@@ -63,7 +66,9 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 
 <!-- Slide 1: Cover -->
 <section class="slide active" data-slide="1" data-section="引起動機">
-  <div class="full-img" style="background:linear-gradient(135deg,#1a0533,#0a0e27 40%,#1a0a2e 70%,#0d1b2a)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="cg1" cx="50%" cy="45%" r="60%"><stop offset="0%" stop-color="#2d1b69"/><stop offset="40%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0a0e27"/></radialGradient><radialGradient id="star1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff" stop-opacity=".8"/><stop offset="100%" stop-color="#b388ff" stop-opacity="0"/></radialGradient></defs><rect fill="url(#cg1)" width="1920" height="1080"/><g opacity=".6"><circle cx="960" cy="500" r="280" fill="none" stroke="#b388ff" stroke-width=".5" opacity=".3"/><circle cx="960" cy="500" r="200" fill="none" stroke="#ff6ec7" stroke-width=".5" opacity=".25"/><circle cx="960" cy="500" r="120" fill="none" stroke="#b388ff" stroke-width=".8" opacity=".4"/><circle cx="960" cy="500" r="60" fill="url(#star1)" opacity=".3"/></g><g fill="#fff" opacity=".35"><circle cx="300" cy="200" r="1.5"/><circle cx="700" cy="150" r="1"/><circle cx="1500" cy="250" r="1.5"/><circle cx="1200" cy="100" r="1"/><circle cx="400" cy="800" r="1.2"/><circle cx="1600" cy="700" r="1.5"/><circle cx="1000" cy="900" r="1"/><circle cx="200" cy="500" r="1.8"/><circle cx="1700" cy="400" r="1"/><circle cx="500" cy="350" r="1.3"/><circle cx="1400" cy="850" r="1.2"/><circle cx="800" cy="700" r="1"/></g><g opacity=".15"><path d="M0 1080 Q300 900 600 1000 T1200 950 T1920 1050" fill="none" stroke="#b388ff" stroke-width="40"/><path d="M0 1080 Q200 800 500 920 T1100 850 T1920 980" fill="none" stroke="#ff6ec7" stroke-width="30"/></g></svg>
+  </div>
   <div class="slide-inner closing">
     <span class="kicker">2026 · AI 靈性探索</span>
     <h1>阿卡西紀錄</h1>
@@ -74,7 +79,9 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 
 <!-- Slide 2: Question -->
 <section class="slide" data-slide="2" data-section="引起動機">
-  <div class="full-img" style="background:linear-gradient(135deg,#0a0e27,#1a0533 50%,#0d1b2a)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="qbg" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#1a0a30"/><stop offset="50%" stop-color="#0e0a22"/><stop offset="100%" stop-color="#0a0e27"/></radialGradient></defs><rect fill="url(#qbg)" width="1920" height="1080"/><g opacity=".5"><circle cx="960" cy="540" r="350" fill="none" stroke="#b388ff" stroke-width="1" opacity=".2"/><circle cx="960" cy="540" r="250" fill="none" stroke="#ff6ec7" stroke-width=".5" opacity=".15"/><circle cx="960" cy="540" r="400" fill="none" stroke="#b388ff" stroke-width=".3" opacity=".12"/></g><g fill="#fff" opacity=".2"><circle cx="200" cy="300" r="2"/><circle cx="1800" cy="200" r="1.5"/><circle cx="400" cy="900" r="2.5"/><circle cx="1500" cy="850" r="1.8"/><circle cx="100" cy="600" r="1.2"/><circle cx="1700" cy="500" r="2"/><circle cx="600" cy="100" r="1.5"/><circle cx="1300" cy="200" r="1"/></g></svg>
+  </div>
   <div class="slide-inner big-question">
     <span class="kicker">PROBLEM</span>
     <h1>你也好奇<br><span class="gradient">自己的前世今生嗎？</span></h1>
@@ -84,7 +91,9 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 
 <!-- Slide 3: Thesis -->
 <section class="slide" data-slide="3" data-section="引起動機">
-  <div class="full-img" style="background:linear-gradient(135deg,#0d1b2a,#0a0e27 50%,#1a0533)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="tbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d1b2a"/><stop offset="50%" stop-color="#0a0e27"/><stop offset="100%" stop-color="#1a0533"/></linearGradient><radialGradient id="glow" cx="70%" cy="30%" r="40%"><stop offset="0%" stop-color="#b388ff" stop-opacity=".15"/><stop offset="100%" stop-color="#b388ff" stop-opacity="0"/></radialGradient></defs><rect fill="url(#tbg)" width="1920" height="1080"/><rect fill="url(#glow)" width="1920" height="1080"/><g opacity=".12"><path d="M0 1080 Q400 750 800 900 T1600 800 T1920 950" fill="none" stroke="#b388ff" stroke-width="50"/><path d="M0 1080 Q300 650 700 820 T1500 720 T1920 900" fill="none" stroke="#ff6ec7" stroke-width="35"/></g><g fill="#fff" opacity=".3"><circle cx="300" cy="200" r="1.5"/><circle cx="1400" cy="150" r="2"/><circle cx="1000" cy="350" r="1"/><circle cx="600" cy="800" r="1.5"/><circle cx="1600" cy="600" r="1.2"/></g><text x="1650" y="200" font-family="serif" font-size="180" fill="#b388ff" opacity=".08" font-style="italic">Akasha</text></svg>
+  </div>
   <div class="slide-inner">
     <span class="kicker">THESIS</span>
     <h1>什麼是阿卡西紀錄？</h1>
@@ -94,29 +103,35 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
   </div>
 </section>
 
-<!-- Slide 4: Overview (clickable cards) -->
+<!-- Slide 4: Overview -->
 <section class="slide" data-slide="4" data-section="維持注意">
   <div class="slide-inner">
     <span class="kicker">OVERVIEW · CLICKABLE</span>
     <h1>三種探索層次</h1>
     <div class="three-col">
       <article class="type-card" onclick="goto(5)">
-        <div class="card-img"><div class="grad-bg" style="background:linear-gradient(135deg,#b388ff,#7c4dff)"></div></div>
+        <div class="card-img">
+          <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="c1g" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#b388ff"/><stop offset="100%" stop-color="#7c4dff"/></radialGradient></defs><rect fill="url(#c1g)" width="160" height="100"/><circle cx="80" cy="50" r="30" fill="none" stroke="#fff" stroke-width="1" opacity=".3"/><circle cx="80" cy="50" r="18" fill="none" stroke="#fff" stroke-width=".8" opacity=".25"/><circle cx="80" cy="50" r="8" fill="#fff" opacity=".15"/><path d="M20 80 Q60 20 140 70" fill="none" stroke="#fff" stroke-width=".8" opacity=".2"/></svg>
+        </div>
         <span class="badge">BASIC</span>
         <h3>基礎前世探索</h3>
-        <p>姓名 + 生日 → 完整阿卡西紀錄分析：靈魂特質、前世經歷、今生課題</p>
+        <p>姓名 + 生日 → 完整阿卡西紀錄分析</p>
       </article>
       <article class="type-card" onclick="goto(8)">
-        <div class="card-img"><div class="grad-bg" style="background:linear-gradient(135deg,#ff6ec7,#ff4081)"></div></div>
+        <div class="card-img">
+          <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="c2g" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#ff6ec7"/><stop offset="100%" stop-color="#ff4081"/></radialGradient></defs><rect fill="url(#c2g)" width="160" height="100"/><rect x="40" y="25" width="80" height="55" rx="6" fill="none" stroke="#fff" stroke-width="1.2" opacity=".3"/><rect x="48" y="35" width="30" height="4" rx="2" fill="#fff" opacity=".2"/><rect x="48" y="44" width="50" height="4" rx="2" fill="#fff" opacity=".15"/><rect x="48" y="53" width="40" height="4" rx="2" fill="#fff" opacity=".12"/></svg>
+        </div>
         <span class="badge">BONUS</span>
         <h3>個人圖卡生成</h3>
-        <p>將文字分析轉為一張視覺化阿卡西紀錄圖卡，一目瞭然</p>
+        <p>將文字分析轉為視覺化圖卡</p>
       </article>
       <article class="type-card" onclick="goto(9)">
-        <div class="card-img"><div class="grad-bg" style="background:linear-gradient(135deg,#ffd740,#ffab00)"></div></div>
+        <div class="card-img">
+          <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="c3g" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#ffd740"/><stop offset="100%" stop-color="#ffab00"/></radialGradient></defs><rect fill="url(#c3g)" width="160" height="100"/><g opacity=".3" stroke="#fff" stroke-width="1" fill="none"><path d="M50 70 L65 35 L80 55 L95 30 L110 70"/><circle cx="65" cy="35" r="3" fill="#fff" opacity=".2"/><circle cx="95" cy="30" r="3" fill="#fff" opacity=".2"/></g></svg>
+        </div>
         <span class="badge">ADVANCED</span>
-        <h3>進階感情線探索</h3>
-        <p>探索你與某人的靈魂連結紀錄，前世關係與業力課題</p>
+        <h3>進階感情線</h3>
+        <p>探索兩人的靈魂連結</p>
       </article>
     </div>
   </div>
@@ -124,11 +139,13 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 
 <!-- Slide 5: Step 1 -->
 <section class="slide" data-slide="5" data-section="維持注意">
-  <div class="full-img" style="background:linear-gradient(135deg,#0a0e27,#1a0533 50%,#0d1b2a)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="s1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a0e27"/><stop offset="50%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d1b2a"/></linearGradient></defs><rect fill="url(#s1bg)" width="1920" height="1080"/></svg>
+  </div>
   <div class="slide-inner split">
     <div class="split-img">
       <span class="img-tag">STEP 01 · SETUP</span>
-      <div class="grad-bg" style="background:linear-gradient(135deg,#7c4dff,#b388ff);border-radius:18px"></div>
+      <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="st1g" cx="40%" cy="40%" r="70%"><stop offset="0%" stop-color="#7c4dff"/><stop offset="100%" stop-color="#3d1a99"/></radialGradient></defs><rect fill="url(#st1g)" width="160" height="100"/><g stroke="#fff" stroke-opacity=".25" fill="none"><rect x="20" y="28" rx="6" width="120" height="55" stroke-width="1.2"/><rect x="28" y="36" rx="2" width="104" height="8" stroke-width=".5"/><rect x="28" y="48" rx="2" width="60" height="4" stroke-width=".5"/><rect x="28" y="56" rx="2" width="80" height="4" stroke-width=".5"/></g><circle cx="135" cy="20" r="12" fill="#b388ff" opacity=".35"/><path d="M131 18 L135 22 L141 14" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/></svg>
     </div>
     <div class="text"><span class="kicker">步驟 1</span>
       <h1>切換暫存對話模式</h1>
@@ -142,9 +159,11 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
   </div>
 </section>
 
-<!-- Slide 6: Step 2 - The Prompt -->
+<!-- Slide 6: Step 2 -->
 <section class="slide" data-slide="6" data-section="維持注意">
-  <div class="full-img" style="background:linear-gradient(135deg,#0d1b2a,#0a0e27 50%,#1a0533)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="s2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d1b2a"/><stop offset="50%" stop-color="#0a0e27"/><stop offset="100%" stop-color="#1a0533"/></linearGradient></defs><rect fill="url(#s2bg)" width="1920" height="1080"/></svg>
+  </div>
   <div class="slide-inner">
     <span class="kicker">STEP 02 · PROMPT</span>
     <h1>輸入阿卡西紀錄指令</h1>
@@ -162,11 +181,13 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 
 <!-- Slide 7: Step 3 -->
 <section class="slide" data-slide="7" data-section="維持注意">
-  <div class="full-img" style="background:linear-gradient(135deg,#1a0533,#0a0e27 50%,#0d1b2a)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="s3bg" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#1a0533"/><stop offset="50%" stop-color="#0a0e27"/><stop offset="100%" stop-color="#0d1b2a"/></radialGradient></defs><rect fill="url(#s3bg)" width="1920" height="1080"/></svg>
+  </div>
   <div class="slide-inner split flip">
     <div class="split-img">
       <span class="img-tag">STEP 03 · READING</span>
-      <div class="grad-bg" style="background:linear-gradient(135deg,#b388ff,#7c4dff);border-radius:18px"></div>
+      <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="st3g" cx="40%" cy="40%" r="70%"><stop offset="0%" stop-color="#b388ff"/><stop offset="100%" stop-color="#4a1a99"/></radialGradient></defs><rect fill="url(#st3g)" width="160" height="100"/><g opacity=".25"><path d="M40 30 Q80 15 120 30" fill="none" stroke="#fff" stroke-width="1"/><path d="M40 42 Q80 27 120 42" fill="none" stroke="#fff" stroke-width=".8"/><path d="M40 54 Q80 39 120 54" fill="none" stroke="#fff" stroke-width=".6"/><path d="M40 66 Q80 51 120 66" fill="none" stroke="#fff" stroke-width=".4"/></g><circle cx="80" cy="55" r="25" fill="none" stroke="#fff" stroke-width=".5" opacity=".15"/><circle cx="80" cy="55" r="12" fill="none" stroke="#fff" stroke-width=".8" opacity=".2"/></svg>
     </div>
     <div class="text"><span class="kicker">步驟 3</span>
       <h1>取得前世今生</h1>
@@ -183,24 +204,28 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 
 <!-- Slide 8: Bonus Card -->
 <section class="slide" data-slide="8" data-section="維持注意">
-  <div class="full-img" style="background:linear-gradient(135deg,#0a0e27,#0d1b2a 50%,#1a0533)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="b8bg" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#0a0e27"/><stop offset="50%" stop-color="#0d1b2a"/><stop offset="100%" stop-color="#1a0533"/></radialGradient></defs><rect fill="url(#b8bg)" width="1920" height="1080"/></svg>
+  </div>
   <div class="slide-inner split">
     <div class="split-img">
       <span class="img-tag">BONUS · CARD</span>
-      <div class="grad-bg" style="background:linear-gradient(135deg,#ff6ec7,#ff4081);border-radius:18px"></div>
+      <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="b1g" cx="40%" cy="40%" r="70%"><stop offset="0%" stop-color="#ff6ec7"/><stop offset="100%" stop-color="#cc1666"/></radialGradient></defs><rect fill="url(#b1g)" width="160" height="100"/><rect x="25" y="20" width="110" height="65" rx="5" fill="none" stroke="#fff" stroke-width=".8" opacity=".25"/><rect x="33" y="28" width="35" height="4" rx="2" fill="#fff" opacity=".18"/><rect x="33" y="37" width="80" height="3" rx="1.5" fill="#fff" opacity=".12"/><rect x="33" y="44" width="70" height="3" rx="1.5" fill="#fff" opacity=".1"/><rect x="33" y="51" width="60" height="3" rx="1.5" fill="#fff" opacity=".08"/><rect x="33" y="60" width="40" height="3" rx="1.5" fill="#fff" opacity=".12"/></svg>
     </div>
     <div class="text"><span class="kicker">BONUS</span>
       <h1>生成個人圖卡</h1>
       <p class="lead">不習慣看這麼多字？繼續輸入這段指令：</p>
       <div class="code-block" style="font-size:14px;max-height:120px">請依造上面資料幫我製作一張阿卡西紀錄表</div>
-      <p class="lead" style="margin-top:var(--s3)">ChatGPT 會自動生成一張視覺化的阿卡西紀錄圖卡，顯示：靈魂特質、今生主要課題、前世經歷、感情與人際能量、財運與事業方向、靈魂天賦、靈魂關鍵字。</p>
+      <p class="lead" style="margin-top:var(--s3)">ChatGPT 會自動生成一張視覺化的阿卡西紀錄圖卡，顯示靈魂特質、今生課題、前世經歷等。</p>
     </div>
   </div>
 </section>
 
-<!-- Slide 9: Advanced - Relationship -->
+<!-- Slide 9: Advanced -->
 <section class="slide" data-slide="9" data-section="維持注意">
-  <div class="full-img" style="background:linear-gradient(135deg,#1a0533,#0a0e27 50%,#0d1b2a)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="a9bg" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#1a0533"/><stop offset="50%" stop-color="#0a0e27"/><stop offset="100%" stop-color="#0d1b2a"/></radialGradient></defs><rect fill="url(#a9bg)" width="1920" height="1080"/></svg>
+  </div>
   <div class="slide-inner">
     <span class="kicker">ADVANCED</span>
     <h1>進階：前世感情線</h1>
@@ -219,14 +244,14 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
   </div>
 </section>
 
-<!-- Slide 10: Comparison Table -->
+<!-- Slide 10: Comparison -->
 <section class="slide" data-slide="10" data-section="維持注意">
   <div class="slide-inner compare-layout">
     <div class="support-img">
-      <div class="grad-bg" style="background:linear-gradient(135deg,#7c4dff,#ff6ec7);padding:100% 0;border-radius:16px"></div>
+      <svg viewBox="0 0 160 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="ctg" cx="30%" cy="30%" r="80%"><stop offset="0%" stop-color="#7c4dff"/><stop offset="50%" stop-color="#4a1a99"/><stop offset="100%" stop-color="#0a0e27"/></radialGradient></defs><rect fill="url(#ctg)" width="160" height="200"/><g stroke="#fff" stroke-opacity=".12" fill="none"><circle cx="80" cy="100" r="70" stroke-width=".5"/><circle cx="80" cy="100" r="50" stroke-width=".5"/><circle cx="80" cy="100" r="30" stroke-width=".8"/></g><circle cx="80" cy="100" r="6" fill="#b388ff" opacity=".25"/><path d="M80 100 L110 70 M80 100 L50 80 M80 100 L110 130" stroke="#fff" stroke-opacity=".1" stroke-width=".5"/></svg>
     </div>
     <div><span class="kicker">SORTABLE TABLE</span>
-      <h1>阿卡西 vs AI vs 傳統占卜</h1>
+      <h1>ChatGPT vs 傳統占卜</h1>
       <p class="lead">點欄位標題排序，比較不同方式的差異。</p>
       <table class="compare">
         <thead><tr>
@@ -248,7 +273,7 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
   </div>
 </section>
 
-<!-- Slide 11: Radar Chart -->
+<!-- Slide 11: Chart -->
 <section class="slide" data-slide="11" data-section="維持注意">
   <div class="slide-inner">
     <span class="kicker">DATA · LAZY CHART</span>
@@ -260,7 +285,9 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 
 <!-- Slide 12: Decision Tree -->
 <section class="slide" data-slide="12" data-section="喚起行動">
-  <div class="full-img" style="background:linear-gradient(135deg,#0a0e27,#1a0533 50%,#0d1b2a)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="d12g" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#0a0e27"/><stop offset="50%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d1b2a"/></radialGradient></defs><rect fill="url(#d12g)" width="1920" height="1080"/></svg>
+  </div>
   <div class="slide-inner">
     <span class="kicker">DECISION TREE</span>
     <h1>你相信 AI 能讀取靈魂嗎？</h1>
@@ -290,7 +317,9 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 
 <!-- Slide 13: Closing -->
 <section class="slide" data-slide="13" data-section="喚起行動">
-  <div class="full-img" style="background:linear-gradient(135deg,#1a0533,#0a0e27 50%,#0d1b2a)"></div>
+  <div class="vis-img">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="clsg" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#1a0533"/><stop offset="40%" stop-color="#0a0e27"/><stop offset="100%" stop-color="#0d1b2a"/></radialGradient></defs><rect fill="url(#clsg)" width="1920" height="1080"/><g opacity=".08"><circle cx="960" cy="540" r="400" fill="none" stroke="#b388ff" stroke-width=".5"/><circle cx="960" cy="540" r="300" fill="none" stroke="#ff6ec7" stroke-width=".5"/><circle cx="960" cy="540" r="200" fill="none" stroke="#b388ff" stroke-width=".8"/></g><g fill="#fff" opacity=".1"><circle cx="400" cy="200" r="1"/><circle cx="1500" cy="300" r="1.5"/><circle cx="800" cy="800" r="1.2"/><circle cx="1200" cy="700" r="1"/></g></svg>
+  </div>
   <div class="slide-inner closing">
     <span class="kicker">FINAL ANSWER</span>
     <p class="lead">阿卡西紀錄的真正價值</p>
