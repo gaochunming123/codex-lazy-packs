@@ -36,16 +36,16 @@ h2{font-size:var(--t2);line-height:1.25;margin:0;font-weight:800}
 .big-question{text-align:center}.big-question h1{font-size:70px}.big-question .lead{margin-left:auto;margin-right:auto}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);align-items:center}.split.flip .text{order:1}.split.flip .split-img{order:2}
 .split-img{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(179,136,255,.18),0 0 0 1px rgba(255,255,255,.08)}
-.split-img svg{width:100%;height:100%;display:block}
+
 .img-tag{position:absolute;top:16px;left:16px;background:rgba(10,14,39,.82);color:var(--accent);padding:6px 12px;border-radius:6px;font:700 11px "JetBrains Mono",monospace;letter-spacing:.1em;z-index:1}
 .list{list-style:none;margin:var(--s3) 0 0;padding:0}.list li{font-size:20px;color:var(--ink);line-height:1.45;padding:12px 0;border-top:1px solid rgba(184,197,224,.25)}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s2)}
 .type-card,.choice-card,.soil-step{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:22px;backdrop-filter:blur(10px)}
 .type-card{cursor:pointer;transition:transform .25s ease,border-color .25s ease,background .25s ease}.type-card:hover{transform:translateY(-6px);border-color:var(--accent);background:rgba(179,136,255,.07)}
-.card-img{aspect-ratio:16/10;border-radius:8px;overflow:hidden;margin-bottom:18px;background:var(--bg-2)}.card-img svg{width:100%;height:100%;display:block}
+.card-img{aspect-ratio:16/10;border-radius:8px;overflow:hidden;margin-bottom:18px;width:100%;position:relative}.card-vis{width:100%;height:100%;position:absolute;inset:0}
 .badge{display:inline-block;font:800 var(--t4) "JetBrains Mono",monospace;color:#0a0e27;background:var(--accent);padding:4px 10px;border-radius:4px;margin-bottom:12px}.type-card:nth-child(2) .badge{background:var(--accent-2)}.type-card:nth-child(3) .badge{background:var(--gold)}
 .type-card h3,.choice-card h3,.soil-step h3{font-size:24px;margin:0 0 10px}.type-card p,.choice-card p,.soil-step p{font-size:16px;line-height:1.6;color:var(--ink-2);margin:0}
-.compare-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s2);align-items:center}.support-img{border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(255,110,199,.14)}.support-img svg{width:100%;height:100%;display:block}
+.compare-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s2);align-items:center}.support-img{border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(255,110,199,.14)}
 table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size:18px}table.compare th,table.compare td{padding:15px 16px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}table.compare th{color:var(--accent);font:800 13px "JetBrains Mono",monospace;letter-spacing:.1em;cursor:pointer;user-select:none}table.compare th:hover{color:var(--accent-2)}table.compare tr:hover td{background:rgba(179,136,255,.045)}.yes{color:var(--good);font-weight:900}.no{color:var(--ink-4)}.mid{color:var(--gold);font-weight:900}
 .chart-wrap{height:440px;margin-top:var(--s3);padding:20px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08)}
 .tree-wrap{position:relative;margin-top:var(--s2);height:420px}.tree-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.question-node{position:absolute;left:50%;top:0;transform:translateX(-50%);width:360px;text-align:center;border:1px solid rgba(179,136,255,.7);border-radius:10px;padding:20px;background:rgba(10,14,39,.82);box-shadow:0 0 36px rgba(179,136,255,.15)}.choice-card{position:absolute;top:230px;width:31%;cursor:pointer;transition:.25s}.choice-card:hover{border-color:var(--accent);transform:translateY(-5px)}.choice-card.a{left:0}.choice-card.b{left:34.5%}.choice-card.c{right:0}.tree-result{margin-top:14px;color:var(--ink-2);font-size:18px}
@@ -110,25 +110,19 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
     <h1>三種探索層次</h1>
     <div class="three-col">
       <article class="type-card" onclick="goto(5)">
-        <div class="card-img">
-          <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="c1g" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#b388ff"/><stop offset="100%" stop-color="#7c4dff"/></radialGradient></defs><rect fill="url(#c1g)" width="160" height="100"/><circle cx="80" cy="50" r="30" fill="none" stroke="#fff" stroke-width="1" opacity=".3"/><circle cx="80" cy="50" r="18" fill="none" stroke="#fff" stroke-width=".8" opacity=".25"/><circle cx="80" cy="50" r="8" fill="#fff" opacity=".15"/><path d="M20 80 Q60 20 140 70" fill="none" stroke="#fff" stroke-width=".8" opacity=".2"/></svg>
-        </div>
+        <div class="card-img"><div class="card-vis" style="background:radial-gradient(circle at 30% 30%,rgba(179,136,255,.4) 0%,transparent 60%),radial-gradient(circle at 70% 70%,rgba(124,77,255,.3) 0%,transparent 50%),linear-gradient(135deg,#b388ff 0%,#7c4dff 50%,#4a1a99 100%)"></div></div>
         <span class="badge">BASIC</span>
         <h3>基礎前世探索</h3>
         <p>姓名 + 生日 → 完整阿卡西紀錄分析</p>
       </article>
       <article class="type-card" onclick="goto(8)">
-        <div class="card-img">
-          <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="c2g" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#ff6ec7"/><stop offset="100%" stop-color="#ff4081"/></radialGradient></defs><rect fill="url(#c2g)" width="160" height="100"/><rect x="40" y="25" width="80" height="55" rx="6" fill="none" stroke="#fff" stroke-width="1.2" opacity=".3"/><rect x="48" y="35" width="30" height="4" rx="2" fill="#fff" opacity=".2"/><rect x="48" y="44" width="50" height="4" rx="2" fill="#fff" opacity=".15"/><rect x="48" y="53" width="40" height="4" rx="2" fill="#fff" opacity=".12"/></svg>
-        </div>
+        <div class="card-img"><div class="card-vis" style="background:radial-gradient(circle at 70% 30%,rgba(255,110,199,.4) 0%,transparent 55%),radial-gradient(circle at 30% 70%,rgba(255,64,129,.3) 0%,transparent 50%),linear-gradient(135deg,#ff6ec7 0%,#ff4081 50%,#cc1666 100%)"></div></div>
         <span class="badge">BONUS</span>
         <h3>個人圖卡生成</h3>
         <p>將文字分析轉為視覺化圖卡</p>
       </article>
       <article class="type-card" onclick="goto(9)">
-        <div class="card-img">
-          <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="c3g" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#ffd740"/><stop offset="100%" stop-color="#ffab00"/></radialGradient></defs><rect fill="url(#c3g)" width="160" height="100"/><g opacity=".3" stroke="#fff" stroke-width="1" fill="none"><path d="M50 70 L65 35 L80 55 L95 30 L110 70"/><circle cx="65" cy="35" r="3" fill="#fff" opacity=".2"/><circle cx="95" cy="30" r="3" fill="#fff" opacity=".2"/></g></svg>
-        </div>
+        <div class="card-img"><div class="card-vis" style="background:radial-gradient(circle at 40% 40%,rgba(255,215,64,.35) 0%,transparent 50%),radial-gradient(circle at 70% 60%,rgba(255,171,0,.3) 0%,transparent 50%),linear-gradient(135deg,#ffd740 0%,#ffab00 50%,#e65100 100%)"></div></div>
         <span class="badge">ADVANCED</span>
         <h3>進階感情線</h3>
         <p>探索兩人的靈魂連結</p>
@@ -143,9 +137,8 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
     <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="s1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a0e27"/><stop offset="50%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d1b2a"/></linearGradient></defs><rect fill="url(#s1bg)" width="1920" height="1080"/></svg>
   </div>
   <div class="slide-inner split">
-    <div class="split-img">
+    <div class="split-img" style="background:radial-gradient(circle at 30% 40%,rgba(124,77,255,.35) 0%,transparent 55%),radial-gradient(circle at 80% 60%,rgba(179,136,255,.25) 0%,transparent 50%),linear-gradient(135deg,#7c4dff 0%,#3d1a99 60%,#1a0533 100%)">
       <span class="img-tag">STEP 01 · SETUP</span>
-      <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="st1g" cx="40%" cy="40%" r="70%"><stop offset="0%" stop-color="#7c4dff"/><stop offset="100%" stop-color="#3d1a99"/></radialGradient></defs><rect fill="url(#st1g)" width="160" height="100"/><g stroke="#fff" stroke-opacity=".25" fill="none"><rect x="20" y="28" rx="6" width="120" height="55" stroke-width="1.2"/><rect x="28" y="36" rx="2" width="104" height="8" stroke-width=".5"/><rect x="28" y="48" rx="2" width="60" height="4" stroke-width=".5"/><rect x="28" y="56" rx="2" width="80" height="4" stroke-width=".5"/></g><circle cx="135" cy="20" r="12" fill="#b388ff" opacity=".35"/><path d="M131 18 L135 22 L141 14" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/></svg>
     </div>
     <div class="text"><span class="kicker">步驟 1</span>
       <h1>切換暫存對話模式</h1>
@@ -185,9 +178,8 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
     <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="s3bg" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#1a0533"/><stop offset="50%" stop-color="#0a0e27"/><stop offset="100%" stop-color="#0d1b2a"/></radialGradient></defs><rect fill="url(#s3bg)" width="1920" height="1080"/></svg>
   </div>
   <div class="slide-inner split flip">
-    <div class="split-img">
+    <div class="split-img" style="background:radial-gradient(circle at 60% 30%,rgba(179,136,255,.35) 0%,transparent 55%),radial-gradient(circle at 30% 70%,rgba(74,26,153,.3) 0%,transparent 50%),linear-gradient(135deg,#b388ff 0%,#4a1a99 60%,#0a0e27 100%)">
       <span class="img-tag">STEP 03 · READING</span>
-      <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="st3g" cx="40%" cy="40%" r="70%"><stop offset="0%" stop-color="#b388ff"/><stop offset="100%" stop-color="#4a1a99"/></radialGradient></defs><rect fill="url(#st3g)" width="160" height="100"/><g opacity=".25"><path d="M40 30 Q80 15 120 30" fill="none" stroke="#fff" stroke-width="1"/><path d="M40 42 Q80 27 120 42" fill="none" stroke="#fff" stroke-width=".8"/><path d="M40 54 Q80 39 120 54" fill="none" stroke="#fff" stroke-width=".6"/><path d="M40 66 Q80 51 120 66" fill="none" stroke="#fff" stroke-width=".4"/></g><circle cx="80" cy="55" r="25" fill="none" stroke="#fff" stroke-width=".5" opacity=".15"/><circle cx="80" cy="55" r="12" fill="none" stroke="#fff" stroke-width=".8" opacity=".2"/></svg>
     </div>
     <div class="text"><span class="kicker">步驟 3</span>
       <h1>取得前世今生</h1>
@@ -208,9 +200,8 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
     <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="b8bg" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#0a0e27"/><stop offset="50%" stop-color="#0d1b2a"/><stop offset="100%" stop-color="#1a0533"/></radialGradient></defs><rect fill="url(#b8bg)" width="1920" height="1080"/></svg>
   </div>
   <div class="slide-inner split">
-    <div class="split-img">
+    <div class="split-img" style="background:radial-gradient(circle at 40% 30%,rgba(255,110,199,.35) 0%,transparent 55%),radial-gradient(circle at 70% 70%,rgba(204,22,102,.3) 0%,transparent 50%),linear-gradient(135deg,#ff6ec7 0%,#cc1666 60%,#0a0e27 100%)">
       <span class="img-tag">BONUS · CARD</span>
-      <svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="b1g" cx="40%" cy="40%" r="70%"><stop offset="0%" stop-color="#ff6ec7"/><stop offset="100%" stop-color="#cc1666"/></radialGradient></defs><rect fill="url(#b1g)" width="160" height="100"/><rect x="25" y="20" width="110" height="65" rx="5" fill="none" stroke="#fff" stroke-width=".8" opacity=".25"/><rect x="33" y="28" width="35" height="4" rx="2" fill="#fff" opacity=".18"/><rect x="33" y="37" width="80" height="3" rx="1.5" fill="#fff" opacity=".12"/><rect x="33" y="44" width="70" height="3" rx="1.5" fill="#fff" opacity=".1"/><rect x="33" y="51" width="60" height="3" rx="1.5" fill="#fff" opacity=".08"/><rect x="33" y="60" width="40" height="3" rx="1.5" fill="#fff" opacity=".12"/></svg>
     </div>
     <div class="text"><span class="kicker">BONUS</span>
       <h1>生成個人圖卡</h1>
@@ -247,8 +238,7 @@ table.compare{width:100%;border-collapse:collapse;margin-top:var(--s3);font-size
 <!-- Slide 10: Comparison -->
 <section class="slide" data-slide="10" data-section="維持注意">
   <div class="slide-inner compare-layout">
-    <div class="support-img">
-      <svg viewBox="0 0 160 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="ctg" cx="30%" cy="30%" r="80%"><stop offset="0%" stop-color="#7c4dff"/><stop offset="50%" stop-color="#4a1a99"/><stop offset="100%" stop-color="#0a0e27"/></radialGradient></defs><rect fill="url(#ctg)" width="160" height="200"/><g stroke="#fff" stroke-opacity=".12" fill="none"><circle cx="80" cy="100" r="70" stroke-width=".5"/><circle cx="80" cy="100" r="50" stroke-width=".5"/><circle cx="80" cy="100" r="30" stroke-width=".8"/></g><circle cx="80" cy="100" r="6" fill="#b388ff" opacity=".25"/><path d="M80 100 L110 70 M80 100 L50 80 M80 100 L110 130" stroke="#fff" stroke-opacity=".1" stroke-width=".5"/></svg>
+    <div class="support-img" style="min-height: 320px;background:radial-gradient(circle at 30% 40%,rgba(124,77,255,.3) 0%,transparent 55%),radial-gradient(circle at 70% 60%,rgba(179,136,255,.2) 0%,transparent 50%),linear-gradient(135deg,#7c4dff 0%,#4a1a99 50%,#0a0e27 100%)">
     </div>
     <div><span class="kicker">SORTABLE TABLE</span>
       <h1>ChatGPT vs 傳統占卜</h1>
