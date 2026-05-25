@@ -71,3 +71,11 @@ opencloud_0525/
 - 不要把 API key、token、密碼寫進 repo
 - 不要儲存學生姓名；正式資料只用座號與班級代號
 - skills_codex/ 和 skills_claude/ 的內容不要互相覆蓋
+
+## 專案模板
+
+新專案初始化統一從模板倉庫建立：
+- GitHub：https://github.com/gaochunming123/project-template（is_template=true）
+- 本機備份：2ndbrain/project-template/
+- 使用方式：`gh repo create <name> --public --template=gaochunming123/project-template --clone`
+- 或跑 `scripts/init-project.ps1 -ProjectName <name> -Description "<desc>"`
